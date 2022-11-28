@@ -53,3 +53,16 @@ zNotAlfa_2 = qnorm(notAlfa_2)
 
 izqIC = pVal + zNotAlfa_2 * sqrt((pVal* notPVal)/n)
 derIC = pVal + zAlfa_2 * sqrt((pVal* notPVal)/n)
+
+# b LS-LI
+diffLsLi = 0.04
+alfa = 0.05
+
+alfa_2 = alfa / 2
+notAlfa_2 = 1 - alfa_2
+
+zNotAlfa_2 = qnorm(notAlfa_2)
+
+result = (1/4) * 1/((diffLsLi/(2*zNotAlfa_2))^2) 
+
+# n <= result

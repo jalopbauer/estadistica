@@ -34,3 +34,22 @@ d_perdidaMeslaboral = diasLaboralesEnMes * d_perdidaPorDia
 
 # b
 1-pnorm(22000, u_perdidaMeslaboral, d_perdidaMeslaboral)
+
+# 3 
+# a IC a partir de p valor pvalor
+n = 2253
+numPos = 1262
+icPorcentaje = 0.95
+
+pVal = numPos/n
+notPVal = 1 - pVal
+
+alfa = 1 - icPorcentaje
+alfa_2 = alfa / 2
+notAlfa_2 = 1 - alfa_2
+
+zAlfa_2 = qnorm(alfa_2)
+zNotAlfa_2 = qnorm(notAlfa_2)
+
+izqIC = pVal + zNotAlfa_2 * sqrt((pVal* notPVal)/n)
+derIC = pVal + zAlfa_2 * sqrt((pVal* notPVal)/n)

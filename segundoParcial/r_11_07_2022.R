@@ -16,3 +16,21 @@ db = 0.5
 uDiff = ua - ub
 dDiff = da + db
 p = 1-pnorm(0, uDiff, dDiff)
+# 2
+u = 0.1
+d = 0.03
+# a
+piezasPorDia = 40
+u_piezasPorDia = piezasPorDia * u
+d_piezasPorDia = piezasPorDia * d
+
+perdidaPorPieza = 250
+u_perdidaPorDia = perdidaPorPieza * u_piezasPorDia
+d_perdidaPorDia = perdidaPorPieza * d_piezasPorDia
+
+diasLaboralesEnMes = 25
+u_perdidaMeslaboral = diasLaboralesEnMes * u_perdidaPorDia
+d_perdidaMeslaboral = diasLaboralesEnMes * d_perdidaPorDia 
+
+# b
+1-pnorm(22000, u_perdidaMeslaboral, d_perdidaMeslaboral)

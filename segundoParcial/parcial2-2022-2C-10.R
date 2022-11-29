@@ -166,3 +166,23 @@ b)
 Quiero no rechazar Ho --> 0.0589 >= α --> aca mi nivel de confianza seria mal para no rechazar Ho
                     con α <= 0.0589 -> con un 95% -> α = 0.05
                     podriamos NO rechazar Ho.
+c) TH { Ho: σ0 <= 3g
+        Ha: σ0 > 3g}  ---> 10% = α = 0.1   -> USO Chi^2 (n-1) = (n-1)*S^2/σ0^2 --> Chi(9) = 10.84
+                          S^2 = 10.84
+                          σ0^2 = 9 
+  qchisq(0.1 , 9) = 4.16
+  pchisq(10.84 , 9) = 0.7131 --> pvalue --> 1- 0.7131 = 0.2868 -> pvalue
+  
+  --> 0.2868 > 0.1 --> No rechazo Ho (Me da mas error)
+  
+d) 30 Huevos --> n = 30 --> Solo 18 cumplen con lo informado 
+             --> muestra grande.
+
+p^ = exitos/total == 18/30 == 0.6  --> Ber(0.6)  --> IC = 95%
+                                                     α = 0.05
+                                                     α/2 = 0.025
+  [P^ + Z(α/2)*sqrt((p^(1-p^))/n) < p < P^ + Z(1-α/2)*sqrt((p^(1-p^))/n) ]
+                                                     Z(α/2) = qnorm(0.025) = -1.96
+                                                     Z(1-α/2) = 1.96
+Reemplazo y el valor me queda
+[0.4247 , 0.7753] = 95%

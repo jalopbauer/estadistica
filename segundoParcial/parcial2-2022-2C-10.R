@@ -132,3 +132,37 @@ C-> n = 100 LI = 0.28     p^ = 0.35
                       Ordenado de menor a mayor segun la confianza C,A,B
 
 #################################################################
+
+Ejercicio 4
+Negocio Agricola
+Xprom = 64g
+cliente compro un maple (30 huevos) y mide el peso de 10 huevos
+        Peso[g] = [57 62 60 68 63 65 63 59 65 60]
+se asume que el peso tiene distribucion normal
+a) Elaborar un TH que ponga aprueba lo que informa el vendedor y que sea acorde a la preocupacion del cliente.
+Hallar el peso critico que separa las regiones de rechazo y no rechazo utilizando un nivel de significacion de 10%.
+Indicar que decision toma.
+b) Cual es el Valor de confianza del cual cambiaria la decision del test anterior?
+c) Por otro lado se asume el desvio <= 3g . Contrastarlo con un Test adecuado de 10% signifciacion. Informar Pvalue
+d) El cliente continua midiendo el maple (30 huevos) y solo 18 siguen lo que dice el vendedor. Hallar un IC = 95% para la 
+proporcion de huevos. 
+
+a)
+  Xpr = X promedio
+  Xobs = X promedio observado
+Xpr = 64g por unidad
+Xobs = (Σ(i = 1 , n = 10) pi)/10 = 62.2g --> Xobs
+                                        --> S^2 = Σ(n = n) (Xi - Xpr)^2/n-1  = 10.84
+
+X~N(62.2 , S^2 =10.84) --> Nivel de significacion = 10% = 0.1 = α
+
+TH: Ho : µ0 >= 64g       Xobs = 62.2g
+    Ha : µ0 <  64g       X~N(62.2 , 10.84) n = 10
+                t(n-1) = (Xpr - µ0)/S/sqrt(n) = -1.7288 = t(9)
+                                                      --> Pt(-1.7288, 9) = 0.0589 --> pvalue
+                qt(0.1 , 9) = tCritico                --> 0.0589 < 0.1 --> rechazo Ho
+                tcritico = -1.3830                  o --> -1.7288 < -1.383 --> rechazo Ho
+b)
+Quiero no rechazar Ho --> 0.0589 >= α --> aca mi nivel de confianza seria mal para no rechazar Ho
+                    con α <= 0.0589 -> con un 95% -> α = 0.05
+                    podriamos NO rechazar Ho.
